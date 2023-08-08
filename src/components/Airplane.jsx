@@ -6,7 +6,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
 
-const HELIX_SPEED = 12;
+const HELIX_SPEED = 6;
 
 export function Airplane(props) {
   const { nodes, materials } = useGLTF("./models/airplane/model.glb");
@@ -20,13 +20,13 @@ export function Airplane(props) {
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.PUSHILIN_Plane_Circle000.geometry}>
-        <meshStandardMaterial color="red" />
+        <meshStandardMaterial color="white" />
       </mesh>
       <mesh
         ref={helix}
         geometry={nodes.PUSHILIN_Plane_Helix.geometry}
         material={materials.plane}
-        position={[1.09, 0.23, 0]} //adjust korte hote pare
+        position={[1.09, 0.23, 0]}
       >
         <meshStandardMaterial color="white" />
       </mesh>
